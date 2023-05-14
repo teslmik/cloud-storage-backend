@@ -12,18 +12,18 @@ export class UsersService {
   ) {}
 
   async findByEmail(email: string) {
-    return this.repository.findOneBy({
+    return await this.repository.findOneBy({
       email,
     });
   }
 
   async findById(id: number) {
-    return this.repository.findOneBy({
+    return await this.repository.findOneBy({
       id,
     });
   }
 
-  create(dto: CreateUserDto) {
-    return this.repository.save(dto);
+  async create(dto: CreateUserDto) {
+    return await this.repository.save(dto);
   }
 }
