@@ -8,7 +8,7 @@ export class FilesService {
   constructor(
     @InjectRepository(FileEntity)
     private repository: Repository<FileEntity>,
-  ) { }
+  ) {}
 
   findAll(userId: number, fileType: FileType) {
     const qb = this.repository.createQueryBuilder('file');
